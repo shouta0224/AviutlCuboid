@@ -1,0 +1,53 @@
+--track0:X幅,0,1000,100
+--track1:Y幅,0,1000,100
+--track2:Z幅,0,1000,100
+--dialog:色/col,local color=0xffffff;
+
+--各種数値を使いやすいように変数に代入.
+x = obj.ox
+y = obj.oy
+z = obj.oz
+dx = obj.track0
+dy = obj.track1
+dz = obj.track2
+
+--頂点の座標を保管用のリストを作成.
+xv = {}
+yv = {}
+zv = {}
+
+--頂点の座標を求める.
+i = 0
+for xi=0,1 do
+    for yi=0,1 do
+        for zi=0,1 do
+            if (xi==0) then
+                xv[i] = x + dx/2
+            else
+                xv[i] = x - dx/2
+            end
+            if (yi==0) then
+                yv[i] = y + dy/2
+            else
+                yv[i] = y - dy/2
+            end
+            if (zi==0) then
+                zv[i] = z + dz/2
+            else
+                zv[i] = z - dz/2
+            end
+            i = i + 1
+        end
+    end
+end
+
+--描画用の四角形をロード.
+obj.load("figure","四角形",color,1)
+
+--drawpolyで描画.
+obj.drawpoly(xv[1],yv[1],zv[1],xv[0],yv[0],zv[0],xv[2],yv[2],zv[2],xv[3],yv[3],zv[3])
+obj.drawpoly(xv[4],yv[4],zv[4],xv[5],yv[5],zv[5],xv[7],yv[7],zv[7],xv[6],yv[6],zv[6])
+obj.drawpoly(xv[5],yv[5],zv[5],xv[1],yv[1],zv[1],xv[3],yv[3],zv[3],xv[7],yv[7],zv[7])
+obj.drawpoly(xv[0],yv[0],zv[0],xv[4],yv[4],zv[4],xv[6],yv[6],zv[6],xv[2],yv[2],zv[2])
+obj.drawpoly(xv[4],yv[4],zv[4],xv[0],yv[0],zv[0],xv[1],yv[1],zv[1],xv[5],yv[5],zv[5])
+obj.drawpoly(xv[7],yv[7],zv[7],xv[3],yv[3],zv[3],xv[2],yv[2],zv[2],xv[6],yv[6],zv[6])
