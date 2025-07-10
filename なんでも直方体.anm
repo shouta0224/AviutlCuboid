@@ -4,20 +4,20 @@
 --dialog:色/col,local color=0xffffff;
 
 --各種数値を使いやすいように変数に代入.
-x = obj.ox
-y = obj.oy
-z = obj.oz
-dx = obj.track0
-dy = obj.track1
-dz = obj.track2
+local x = obj.ox
+local y = obj.oy
+local z = obj.oz
+local dx = obj.track0
+local dy = obj.track1
+local dz = obj.track2
 
 --頂点の座標を保管用のリストを作成.
-xv = {}
-yv = {}
-zv = {}
+local xv = {}
+local yv = {}
+local zv = {}
 
 --頂点の座標を求める.
-i = 0
+local i = 0
 for xi=0,1 do
     for yi=0,1 do
         for zi=0,1 do
