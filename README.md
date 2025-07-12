@@ -5,7 +5,7 @@
 
 ## 動作環境
 
-AviUtl version1.10と拡張編集 version0.92、及びAviUtl ExEdit2 beta1にて動作確認しました。
+AviUtl version1.10と拡張編集 version0.92、及びAviUtl ExEdit2 beta2にて動作確認しました。
 
 ## 導入方法
 
